@@ -66,7 +66,7 @@ func (c *Client) Dial() error {
 	if err != nil {
 		if c.onDisconnection != nil {
 
-			c.onDisconnection(&c.Channel)
+			go c.onDisconnection(&c.Channel)
 		}
 
 		return err
